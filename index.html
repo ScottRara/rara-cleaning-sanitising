@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cleaning &amp; Sanitising Training Module | RaRa Ramen</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .temp-badge {
+      display: inline-block;
+      background: var(--rara-red);
+      color: white;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-size: 1.1em;
+    }
+    .vs-table { border-collapse: collapse; width: 100%; }
+    .vs-table td, .vs-table th { padding: 14px 18px; vertical-align: top; }
+    .vs-col-clean { background: #E3F2FD; }
+    .vs-col-sanit { background: #FFF3E0; }
+    .icon-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .icon-step:last-child { border-bottom: none; }
+    .icon-step .step-icon {
+      font-size: 2em;
+      flex-shrink: 0;
+      width: 50px;
+      text-align: center;
+    }
+    .color-swatch {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      border-radius: 4px;
+      vertical-align: middle;
+      margin-right: 6px;
+      border: 1px solid #ccc;
+    }
+    .chemical-card {
+      background: #F3E5F5;
+      border: 2px solid #7B1FA2;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 12px 0;
+    }
+    .chemical-card h4 { color: #7B1FA2; margin-bottom: 8px; }
+    .schedule-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 16px 0;
+    }
+    @media (max-width: 600px) {
+      .schedule-grid { grid-template-columns: 1fr; }
+    }
+    .schedule-card {
+      border-radius: 10px;
+      padding: 20px;
+      border: 2px solid;
+    }
+    .schedule-daily { background: #E8F5E9; border-color: #2E7D32; }
+    .schedule-weekly { background: #E3F2FD; border-color: #1565C0; }
+    .schedule-card h4 { margin-bottom: 12px; }
+    .schedule-daily h4 { color: #2E7D32; }
+    .schedule-weekly h4 { color: #1565C0; }
+  </style>
+</head>
+<body>
+
+  <div class="module-header">
+    <div class="module-number">RaRa Ramen &mdash; Staff Training Module</div>
+    <h1>Proper Cleaning &amp; Sanitising for Kitchen Staff</h1>
+    <div class="learning-objective">
+      <strong>Learning Objectives:</strong> Understand the critical difference between cleaning and sanitising, master the 6-step cleaning procedure, know correct temperatures and chemical concentrations, follow proper handwashing technique, and implement daily/weekly cleaning schedules at RaRa Ramen.
+    </div>
+  </div>
+
+  <div class="progress-bar"><div class="progress-fill" style="width: 0%" id="progress"></div></div>
+
+  <!-- ========================================= -->
+  <!-- SECTION 1: Cleaning vs Sanitising         -->
+  <!-- ========================================= -->
+  <div class="section" id="s1">
+    <h2>1. Cleaning vs Sanitising &mdash; Know the Difference</h2>
+    <p>Many kitchen staff use the words "cleaning" and "sanitising" interchangeably. They are <strong>not the same thing</strong>, and understanding the difference is fundamental to food safety.</p>
+
+    <table class="vs-table">
+      <thead>
+        <tr>
+          <th class="vs-col-clean" style="width:50%;">Cleaning</th>
+          <th class="vs-col-sanit">Sanitising</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="vs-col-clean"><strong>What it does:</strong> Removes visible dirt, food particles, grease, and grime from a surface</td>
+          <td class="vs-col-sanit"><strong>What it does:</strong> Applies heat or chemicals to destroy or reduce microorganisms (bacteria) to a safe level</td>
+        </tr>
+        <tr>
+          <td class="vs-col-clean"><strong>Uses:</strong> Hot water + detergent + physical scrubbing</td>
+          <td class="vs-col-sanit"><strong>Uses:</strong> High-temperature water (77&deg;C+) OR food-grade chemical sanitiser</td>
+        </tr>
+        <tr>
+          <td class="vs-col-clean"><strong>Removes:</strong> Visible contamination, grease, food residue, allergens</td>
+          <td class="vs-col-sanit"><strong>Removes:</strong> Invisible bacteria, pathogens, microorganisms</td>
+        </tr>
+        <tr>
+          <td class="vs-col-clean"><strong>Without it:</strong> Surfaces look dirty, food residue builds up, attracts pests</td>
+          <td class="vs-col-sanit"><strong>Without it:</strong> Bacteria multiply to dangerous levels, causing foodborne illness</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="alert alert-danger">
+      <strong>Critical Rule</strong>
+      Sanitising is ONLY effective on surfaces that have already been thoroughly cleaned. Wiping a sanitiser over an uncleaned surface just <strong>spreads the bacteria around</strong>. You must ALWAYS clean first, THEN sanitise.
+    </div>
+
+    <div class="flipcard-container">
+      <div class="flipcard" onclick="this.classList.toggle('flipped')">
+        <div class="flipcard-inner">
+          <div class="flipcard-front">Does sanitising replace cleaning?</div>
+          <div class="flipcard-back">NO. Sanitising only works on surfaces that are already clean. You must always clean first, then sanitise.</div>
+        </div>
+      </div>
+      <div class="flipcard" onclick="this.classList.toggle('flipped')">
+        <div class="flipcard-inner">
+          <div class="flipcard-front">What does cleaning remove?</div>
+          <div class="flipcard-back">Visible dirt, food particles, grease, grime, and food allergens. It uses hot water, detergent, and physical scrubbing.</div>
+        </div>
+      </div>
+      <div class="flipcard" onclick="this.classList.toggle('flipped')">
+        <div class="flipcard-inner">
+          <div class="flipcard-front">What does sanitising remove?</div>
+          <div class="flipcard-back">Invisible bacteria and microorganisms, reduced to a safe level using heat (77&deg;C+) or approved chemical sanitisers.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- SECTION 2: The 6-Step Procedure            -->
+  <!-- ========================================= -->
+  <div class="section" id="s2">
+    <h2>2. The 6-Step Cleaning &amp; Sanitising Procedure</h2>
+    <p>Every surface, utensil, and piece of equipment at RaRa Ramen must be cleaned and sanitised following this <strong>strict six-step process</strong>. No shortcuts.</p>
+
+    <div class="icon-step">
+      <div class="step-icon">1&#xFE0F;&#x20E3;</div>
+      <div>
+        <strong>Step 1: Pre-Clean</strong>
+        <p>Scrape or wipe food scraps and other matter off surfaces. Rinse with water to remove loose debris. This step prevents food waste from contaminating your wash water and reduces the load on detergent.</p>
+      </div>
+    </div>
+
+    <div class="icon-step">
+      <div class="step-icon">2&#xFE0F;&#x20E3;</div>
+      <div>
+        <strong>Step 2: Wash</strong>
+        <p>Use <strong>hot water and detergent</strong> to remove grease and food residue. Soak items if necessary. The physical scrubbing action is critical &mdash; it's the friction that removes contamination. Wash in hot soapy water at <span class="temp-badge">45&deg;C</span>.</p>
+      </div>
+    </div>
+
+    <div class="icon-step">
+      <div class="step-icon">3&#xFE0F;&#x20E3;</div>
+      <div>
+        <strong>Step 3: Rinse</strong>
+        <p>Rinse off the detergent and any loosened dirt or residue with clean water. Detergent residue left on surfaces can contaminate food and reduce the effectiveness of sanitisers.</p>
+      </div>
+    </div>
+
+    <div class="icon-step">
+      <div class="step-icon">4&#xFE0F;&#x20E3;</div>
+      <div>
+        <strong>Step 4: Sanitise</strong>
+        <p>Apply a <strong>food-grade sanitiser</strong> or use <strong>heat</strong> to destroy remaining microorganisms. Allow the <strong>appropriate contact time</strong> as specified by the manufacturer's instructions. Do not rush this step.</p>
+      </div>
+    </div>
+
+    <div class="icon-step">
+      <div class="step-icon">5&#xFE0F;&#x20E3;</div>
+      <div>
+        <strong>Step 5: Final Rinse</strong>
+        <p>Wash off the chemical sanitiser <strong>if the manufacturer's instructions require it</strong>. Some sanitisers are designed to be left on (no-rinse), others must be rinsed. Always check the label.</p>
+      </div>
+    </div>
+
+    <div class="icon-step">
+      <div class="step-icon">6&#xFE0F;&#x20E3;</div>
+      <div>
+        <strong>Step 6: Air Dry</strong>
+        <p>Allow utensils, crockery, and benches to <strong>air dry</strong>, or use <strong>single-use paper towels</strong>. Never use tea towels or shared cloths to dry &mdash; they spread bacteria. Air drying is important because bacteria transfer much more easily onto wet surfaces.</p>
+      </div>
+    </div>
+
+    <div class="alert alert-warning">
+      <strong>Clean As You Go</strong>
+      Don't wait until the end of service. Adopt a "clean as you go" approach throughout your shift. Equipment in constant contact with potentially hazardous foods at room temperature (e.g., meat slicers, blenders, stick mixers) must be cleaned and sanitised <strong>at least every 4 hours</strong>.
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- SECTION 3: Temperatures & Chemicals        -->
+  <!-- ========================================= -->
+  <div class="section" id="s3">
+    <h2>3. Temperatures &amp; Chemical Sanitisers</h2>
+    <p>There are two methods of sanitising: <strong>heat (thermal)</strong> and <strong>chemical</strong>. Both are effective when used correctly.</p>
+
+    <h3>Thermal Sanitising (Heat)</h3>
+    <table>
+      <thead>
+        <tr><th>Method</th><th>Wash Temperature</th><th>Sanitise Temperature</th><th>Contact Time</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Hand washing</strong> dishes/appliances</td>
+          <td><span class="temp-badge">45&deg;C</span></td>
+          <td><span class="temp-badge">77&deg;C</span></td>
+          <td>At least <strong>30 seconds</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Commercial dishwasher</strong> &mdash; wash cycle</td>
+          <td colspan="2"><span class="temp-badge">66&ndash;71&deg;C</span></td>
+          <td><strong>60 seconds</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Commercial dishwasher</strong> &mdash; rinse/sanitise cycle</td>
+          <td colspan="2"><span class="temp-badge">82&deg;C</span></td>
+          <td><strong>10 seconds</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Thermometer probes</strong></td>
+          <td colspan="2"><span class="temp-badge">77&deg;C</span></td>
+          <td><strong>30 seconds</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="alert alert-danger">
+      <strong>No Economy Cycles</strong>
+      Never use the "economy" or "eco" setting on commercial dishwashers. These cycles do <strong>not reach high enough temperatures</strong> to properly sanitise. Always use the hottest wash and rinse cycles available.
+    </div>
+
+    <div class="alert alert-warning">
+      <strong>Safety: Wear Thick Gloves</strong>
+      When hand-sanitising at 77&deg;C, you MUST wear thick rubber gloves to avoid burns. This water is extremely hot.
+    </div>
+
+    <h3>Chemical Sanitising</h3>
+    <p>When high temperatures cannot be achieved, approved food-grade chemical sanitisers must be used. These are typically <strong>chlorine-based</strong> (commercial bleach) or <strong>ammonium-based compounds</strong> designed for food premises.</p>
+
+    <div class="chemical-card">
+      <h4>Bleach Dilution Guide (10% Chlorine Commercial Bleach)</h4>
+      <table>
+        <tr><td><strong>Dilution rate:</strong></td><td>1 mL of bleach in 1 Litre of cold water</td></tr>
+        <tr><td><strong>Contact time:</strong></td><td>Minimum 7 seconds on the surface</td></tr>
+        <tr><td><strong>Application:</strong></td><td>Spray bottle, sink immersion, or dishwasher final rinse</td></tr>
+        <tr><td><strong>Important:</strong></td><td>Use <strong>cold</strong> water &mdash; hot water can cause chlorine to evaporate and become less effective</td></tr>
+      </table>
+    </div>
+
+    <div class="key-points">
+      <h4>Chemical Safety Rules</h4>
+      <ul>
+        <li><strong>Always</strong> read the Safety Data Sheet (SDS) and manufacturer's instructions for every chemical product</li>
+        <li><strong>Never</strong> mix different chemicals together</li>
+        <li><strong>Always</strong> follow the correct dilution rates &mdash; too little won't sanitise, too much can contaminate food</li>
+        <li><strong>Always</strong> allow the correct contact time before rinsing (if required)</li>
+        <li>Store chemicals in their <strong>original labelled containers</strong>, away from food and food preparation areas</li>
+        <li>Use <strong>appropriate PPE</strong> (gloves, eye protection) as directed on the SDS</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- SECTION 4: Handwashing                     -->
+  <!-- ========================================= -->
+  <div class="section" id="s4">
+    <h2>4. Handwashing &mdash; Your #1 Defence</h2>
+    <p>Proper handwashing is the single most important thing you can do to prevent foodborne illness. Hands must <strong>always</strong> be washed in a <strong>dedicated handwashing basin</strong> &mdash; never in sinks used for food preparation or utensil washing.</p>
+
+    <h3>The Correct Handwashing Steps</h3>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content"><strong>Wet</strong> hands under warm running water</div>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content"><strong>Apply soap</strong> (liquid soap from a dispenser &mdash; not bar soap)</div>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content"><strong>Scrub vigorously for 15&ndash;30 seconds</strong> &mdash; palms, between fingers, under nails, backs of hands, thumbs, and wrists. Use a clean nail brush for tough food residues.</div>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-content"><strong>Rinse</strong> thoroughly under clean running water</div>
+      </div>
+      <div class="step">
+        <div class="step-number">5</div>
+        <div class="step-content"><strong>Turn off the tap</strong> without re-contaminating your hands (use a paper towel or elbow)</div>
+      </div>
+      <div class="step">
+        <div class="step-number">6</div>
+        <div class="step-content"><strong>Dry completely</strong> using a single-use paper towel. Drying is just as important as washing &mdash; bacteria transfer much more easily onto wet hands.</div>
+      </div>
+    </div>
+
+    <div class="alert alert-info">
+      <strong>What Makes It Effective</strong>
+      <ul style="margin-top:8px;">
+        <li><strong>Friction &amp; time</strong> (15&ndash;30 seconds of scrubbing) is the most critical factor &mdash; more important than water temperature</li>
+        <li><strong>Soap</strong> is necessary to remove grease, dirt, and microorganisms. Liquid dispensers are preferred over bar soap.</li>
+        <li><strong>Hand sanitiser is NOT a substitute</strong> for washing with soap and water</li>
+        <li><strong>Tea towels and aprons</strong> must NEVER be used for drying hands &mdash; they actively cross-contaminate</li>
+      </ul>
+    </div>
+
+    <h3>When Must You Wash Your Hands?</h3>
+    <table>
+      <thead><tr><th>Situation</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>Before starting or re-commencing work, and after breaks</td><td>Hands pick up bacteria from everything you touch outside the kitchen</td></tr>
+        <tr><td>Before handling ready-to-eat food (especially after raw food)</td><td>Prevents cross-contamination between raw and cooked food</td></tr>
+        <tr><td>Immediately after using the toilet</td><td>Prevents faecal contamination</td></tr>
+        <tr><td>After touching hair, scalp, face, mouth, nose, or ears</td><td>These areas harbour bacteria</td></tr>
+        <tr><td>After coughing, sneezing, or using a tissue</td><td>Respiratory bacteria can contaminate food</td></tr>
+        <tr><td>After eating, drinking, or smoking</td><td>Mouth and cigarette contact introduces bacteria</td></tr>
+        <tr><td>After handling money or POS terminals</td><td>Money is one of the most contaminated objects</td></tr>
+        <tr><td>After handling cleaning products, chemicals, or garbage</td><td>Prevents chemical and biological contamination of food</td></tr>
+        <tr><td>After handling raw meat, poultry, or seafood</td><td>Raw proteins carry high levels of pathogenic bacteria</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- SECTION 5: Gloves                          -->
+  <!-- ========================================= -->
+  <div class="section" id="s5">
+    <h2>5. Glove Usage</h2>
+
+    <div class="alert alert-warning">
+      <strong>Gloves Are NOT a Substitute for Clean Hands</strong>
+      Hands must ALWAYS be washed thoroughly before putting on gloves and between glove changes. Gloves are <strong>single-use only</strong> and must never be washed and reused.
+    </div>
+
+    <h3>When to Wear Gloves</h3>
+    <ul>
+      <li>When handling <strong>ready-to-eat foods</strong> (salads, garnishes, plated food)</li>
+      <li>When handling <strong>raw meat, poultry, or seafood</strong></li>
+      <li>When you have a <strong>cut or wound</strong> (which must also be covered by a brightly coloured, waterproof dressing beneath the glove)</li>
+    </ul>
+
+    <h3>When to Change Gloves</h3>
+    <ul>
+      <li>When switching between <strong>raw and ready-to-eat foods</strong></li>
+      <li>After touching your <strong>face, hair, or phone</strong></li>
+      <li>After handling <strong>money</strong></li>
+      <li>After <strong>cleaning or taking out trash</strong></li>
+      <li>After <strong>any activity</strong> where gloves may have picked up bacteria</li>
+    </ul>
+
+    <div class="alert alert-info">
+      <strong>Allergy &amp; Safety Considerations</strong>
+      <ul style="margin-top:8px;">
+        <li>Always use <strong>latex-free gloves</strong> to protect customers with latex allergies</li>
+        <li>Check that non-latex gloves do not contain <strong>colloidal oatmeal</strong> (contains gluten &mdash; can trigger reactions in people with wheat allergy or coeliac disease)</li>
+        <li>Use <strong>different coloured gloves</strong> for different areas (e.g., bathrooms vs kitchen) to prevent cross-contamination between zones</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- SECTION 6: Cross-Contamination Prevention  -->
+  <!-- ========================================= -->
+  <div class="section" id="s6">
+    <h2>6. Cross-Contamination Prevention Through Cleaning</h2>
+    <p>Cross-contamination is the transfer of harmful bacteria or allergens from one surface to another. Proper cleaning is your primary defence.</p>
+
+    <h3>Colour-Coded Chopping Board System</h3>
+    <table>
+      <thead><tr><th>Colour</th><th>Use</th></tr></thead>
+      <tbody>
+        <tr><td><span class="color-swatch" style="background:#D32F2F;"></span> <strong>Red</strong></td><td>Raw meat</td></tr>
+        <tr><td><span class="color-swatch" style="background:#1565C0;"></span> <strong>Blue</strong></td><td>Raw fish / seafood</td></tr>
+        <tr><td><span class="color-swatch" style="background:#FFD600;"></span> <strong>Yellow</strong></td><td>Raw poultry</td></tr>
+        <tr><td><span class="color-swatch" style="background:#2E7D32;"></span> <strong>Green</strong></td><td>Fruits &amp; vegetables</td></tr>
+        <tr><td><span class="color-swatch" style="background:#FFFFFF;"></span> <strong>White</strong></td><td>Bread / bakery / dairy</td></tr>
+        <tr><td><span class="color-swatch" style="background:#795548;"></span> <strong>Brown</strong></td><td>Cooked meat</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Key Cross-Contamination Rules</h3>
+    <ul>
+      <li><strong>Clean and sanitise</strong> food contact surfaces, cutting boards, and knives <strong>between uses</strong> &mdash; especially when switching between raw and ready-to-eat foods</li>
+      <li><strong>Thermometer probes</strong> must be wiped, washed, and sanitised (alcohol swabs or hot water at 77&deg;C for 30 seconds) before and after every use</li>
+      <li><strong>Wiping cloths</strong> must not be used as multipurpose tools. Replace frequently, or wash and soak in sanitiser daily. Use colour-coded cloths for different areas.</li>
+      <li><strong>Damaged utensils</strong> (chipped, cracked, or broken) must be disposed of immediately &mdash; they cannot be effectively sanitised and can harbour bacteria in crevices or cause physical contamination</li>
+      <li><strong>Store raw foods</strong> (especially meat and poultry) on <strong>bottom shelves</strong> in the fridge, securely wrapped, to prevent drips onto ready-to-eat food below</li>
+      <li>Wash hands <strong>before</strong> wiping down benches &mdash; using a cloth with unwashed hands transfers bacteria directly onto food surfaces</li>
+    </ul>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- SECTION 7: Cleaning Schedules              -->
+  <!-- ========================================= -->
+  <div class="section" id="s7">
+    <h2>7. Cleaning Schedules</h2>
+    <p>RaRa Ramen must maintain strict daily and weekly cleaning schedules to ensure no area or piece of equipment is missed.</p>
+
+    <div class="schedule-grid">
+      <div class="schedule-card schedule-daily">
+        <h4>Daily Cleaning Tasks</h4>
+        <ul>
+          <li>All food prep areas, surfaces, cutting boards &amp; utensils &mdash; cleaned and sanitised</li>
+          <li>Cooking equipment (ovens, grills, fryers, stovetops) &mdash; cleaned to prevent fire hazards and grease buildup</li>
+          <li>Slicers, blenders, and stick mixers &mdash; cleaned and sanitised (at least every 4 hours during use)</li>
+          <li>Floors mopped and drains cleared</li>
+          <li>Garbage bins emptied, cleaned, and sanitised</li>
+          <li>Handwash stations restocked (soap, paper towels)</li>
+          <li>Wiping cloths replaced or washed and soaked in sanitiser</li>
+          <li>Thermometer probes cleaned and sanitised</li>
+        </ul>
+      </div>
+      <div class="schedule-card schedule-weekly">
+        <h4>Weekly Cleaning Tasks</h4>
+        <ul>
+          <li>Fridges and cool rooms emptied and cleaned</li>
+          <li>Food waste containers thoroughly cleaned</li>
+          <li>Shelving and store areas cleaned</li>
+          <li>Behind and under equipment</li>
+          <li>Exhaust fans and rangehood filters</li>
+          <li>Walls and splash-backs in prep areas</li>
+          <li>Deep clean of drains</li>
+          <li>Review and update cleaning register</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="alert alert-info">
+      <strong>Cleaning &amp; Sanitising Register</strong>
+      The Food Safety Supervisor oversees a cleaning register that documents exactly <strong>when</strong> specific areas or equipment were cleaned, and <strong>who</strong> completed the task. This is a legal requirement and may be inspected during audits.
+    </div>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- SECTION 8: Waste & Pest Management         -->
+  <!-- ========================================= -->
+  <div class="section" id="s8">
+    <h2>8. Waste Management &amp; Pest Prevention</h2>
+
+    <h3>Garbage Rules</h3>
+    <ul>
+      <li>Use bins with <strong>tight-fitting lids</strong> and <strong>bin liners</strong> &mdash; lids must stay closed during use</li>
+      <li>Bins must <strong>never overflow</strong> &mdash; remove garbage regularly</li>
+      <li>Keep bins <strong>away from food preparation areas</strong></li>
+      <li>Clean and sanitise bins <strong>daily</strong>: remove liners, scrub inside and out with hot water and detergent, rinse, soak with sanitiser, air dry upside down, then replace liner</li>
+      <li><strong>Never</strong> use garbage containers to transfer food or ice</li>
+      <li><strong>Always</strong> wash hands immediately after handling garbage</li>
+    </ul>
+
+    <div class="alert alert-success">
+      <strong>Golden Rule for Food Waste</strong>
+      "If in doubt, throw it out!" &mdash; Any food that is recalled, returned, or suspected of contamination must be clearly marked, kept separate from fresh food, and disposed of promptly.
+    </div>
+
+    <h3>Pest Prevention</h3>
+    <p>Under the Australia New Zealand Food Standards Code (Standard 3.2.2), food businesses must take all practicable measures to prevent pests and eradicate them from the premises.</p>
+    <ul>
+      <li>Block and seal holes, cracks, and gaps in walls and floors</li>
+      <li>Use <strong>fly screens</strong> on doors and windows</li>
+      <li>Keep food off the floor in airtight containers</li>
+      <li>Never leave food out overnight</li>
+      <li><strong>Never use regular fly sprays</strong> in food preparation or service areas &mdash; chemical droplets contaminate food</li>
+      <li>Use blue light zappers, baits, and traps <strong>away from food</strong></li>
+      <li>Use a licensed pest control company for regular treatments</li>
+      <li><strong>Drains must never be left uncovered</strong> &mdash; open drains are a primary entry point for rats and cockroaches</li>
+    </ul>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- SECTION 9: Food Safety Culture             -->
+  <!-- ========================================= -->
+  <div class="section" id="s9">
+    <h2>9. Food Safety Culture at RaRa Ramen</h2>
+    <p>A strong food safety culture means that food safety is treated as a <strong>top priority</strong> &mdash; not just a checklist to complete. It starts with the right attitudes and behaviours from every team member.</p>
+
+    <div class="key-points">
+      <h4>What Good Food Safety Culture Looks Like</h4>
+      <ul>
+        <li>Every team member understands <strong>why</strong> cleaning procedures matter, not just <strong>what</strong> to do</li>
+        <li>If an error occurs, staff ensure potentially unsafe food is <strong>never served</strong></li>
+        <li>Staff <strong>speak up</strong> about food safety concerns without fear</li>
+        <li>The "clean as you go" approach is <strong>second nature</strong>, not an afterthought</li>
+        <li>Records and registers are <strong>kept honestly and accurately</strong></li>
+      </ul>
+    </div>
+
+    <h3>The Food Safety Supervisor's Role</h3>
+    <ul>
+      <li><strong>Monitors</strong> cleaning procedures through routine visual inspections and audits</li>
+      <li><strong>Maintains</strong> cleaning and sanitising registers</li>
+      <li><strong>Takes corrective action</strong> when failures are identified (improper sanitiser use, missed cleaning, pest signs)</li>
+      <li><strong>Trains staff</strong> in proper hygiene and cleaning procedures</li>
+      <li><strong>Reviews and updates</strong> the food safety manual and cleaning schedules regularly</li>
+    </ul>
+  </div>
+
+  <!-- ========================================= -->
+  <!-- QUIZ LINK                                  -->
+  <!-- ========================================= -->
+  <div class="section" style="text-align: center; background: linear-gradient(to right, #E8F5E9, #E3F2FD); border: 2px solid var(--accent-green);">
+    <h2>Knowledge Assessment</h2>
+    <p>You have completed the Cleaning &amp; Sanitising training material. Now take the quiz to test your knowledge.</p>
+    <p>You need <strong>80% (10/12)</strong> to pass.</p>
+    <p style="margin-top: 20px;">
+      <a href="QUIZ_PLACEHOLDER" target="_blank" class="btn btn-primary" style="font-size: 1.2em; padding: 16px 40px;">Take the Quiz &rarr;</a>
+    </p>
+  </div>
+
+  <div class="nav-bar" style="border-top: 2px solid var(--border-light); border-bottom: none; margin-top: 20px;">
+    <a href="#s1">Back to Top &uarr;</a>
+  </div>
+
+  <div class="module-footer">
+    <p>RaRa Ramen &mdash; Cleaning &amp; Sanitising Training Module &copy; 2026</p>
+    <p>Source: Food Safety Supervisor course materials &amp; NSW Food Authority guidelines</p>
+    <p>Author: Scott Gault</p>
+  </div>
+
+  <script>
+    // Progress tracking
+    window.addEventListener('scroll', () => {
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = Math.min(100, Math.round((window.scrollY / h) * 100));
+      document.getElementById('progress').style.width = pct + '%';
+    });
+  </script>
+
+</body>
+</html>
